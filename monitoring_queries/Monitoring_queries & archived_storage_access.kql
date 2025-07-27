@@ -1,0 +1,5 @@
+AzureDiagnostics
+| where ResourceType == "STORAGE"
+| where OperationName == "GetBlob"
+| summarize count() by bin(TimeGenerated, 1h), Resource
+| render timechart
