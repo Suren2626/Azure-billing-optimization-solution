@@ -1,0 +1,10 @@
+This image (can be diagrammed using tools like Lucidchart or draw.io) should show:
+
+API Gateway -> Azure Function
+
+Function -> Cosmos DB for recent data
+
+Function -> Blob Storage (via fallback) for old data
+
+Timer-triggered function for archiving data
+
