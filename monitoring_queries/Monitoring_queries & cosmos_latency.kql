@@ -1,0 +1,5 @@
+AzureDiagnostics
+| where ResourceType == "COSMOSDB"
+| where OperationName == "Query" and TimeGenerated > ago(1d)
+| summarize avg(DurationMs) by bin(TimeGenerated, 1h)
+| render timechart
